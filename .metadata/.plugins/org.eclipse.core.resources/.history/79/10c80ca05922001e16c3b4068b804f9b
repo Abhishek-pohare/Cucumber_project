@@ -1,0 +1,102 @@
+package stepDef;
+
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Input_Implementation {
+
+	public static WebDriver driver;
+	public String URL="http://anuttara.in/business/index.php?application=GL";
+	
+@Given("^User opens browser$")
+public void user_opens_browser() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	ChromeOptions ch= new ChromeOptions();
+	ch.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+	System.setProperty("webdriver.chrome.driver", 
+			"C:\\Users\\Abhishek\\OneDrive\\Desktop\\JAVA_JARS\\driver\\chromedriver.exe");
+	driver= new ChromeDriver(ch);
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	driver.get(URL);
+   // throw new PendingException();
+}
+
+@When("^User navigate to Login page$")
+public void user_navigate_to_Login_page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	//driver.get(URL);
+	System.out.println("Navigated to Login Page");
+	Thread.sleep(2000);
+  //  throw new PendingException();
+}
+
+@When("^User Enters Username and Password$")
+public void user_Enters_Username_and_Password() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.findElement(By.xpath("//input[@name='user_name_entry_field']")).clear();
+	driver.findElement(By.xpath("//input[@name='user_name_entry_field']")).sendKeys("abhishek");
+	//enter password
+	driver.findElement(By.xpath("//input[@name='password']")).clear();
+	driver.findElement(By.xpath("//input[@name='password']")).sendKeys("abhishek");
+	//click login
+	driver.findElement(By.xpath("//input[@name='SubmitUser']")).click();
+	
+	try {
+		Alert al= driver.switchTo().alert();
+		System.out.println("PopUp: "+al.getText());
+		al.accept();
+	}
+	catch(NoAlertPresentException ex){
+		System.out.println(ex);
+	}
+   // throw new PendingException();
+}
+
+@Then("^Message displayed Login successfully$")
+public void message_displayed_Login_successfully() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	String Headingxpath="//html/body/table[1]/tbody/tr/td/table[1]/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr[1]/td[1]";
+	String heading= driver.findElement(By.xpath(Headingxpath)).getText();
+	String ExpHeading="Small Business Account Management | anuttara.in | ";
+	try {
+		junit.framework.Assert.assertEquals(ExpHeading, heading);
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}
+	Thread.sleep(3000);
+   // throw new PendingException();
+}
+
+
+@When("^User Logout from application$")
+public void user_Logout_from_application() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	String Logoutxpath="//html/body/table[1]/tbody/tr/td/table[1]/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr[1]/td[3]/a[5]";
+	driver.findElement(By.xpath(Logoutxpath)).click();
+	Thread.sleep(2000);
+   // throw new PendingException();
+}
+
+@Then("^Message displayed Logout successfully$")
+public void message_displayed_Logout_successfully() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    //throw new PendingException();
+}
+
+
+}

@@ -1,0 +1,29 @@
+package testExecute;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import utility.Constants;
+
+public class Start {
+
+	private static WebDriver driver;
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void BrowserInvoke() {
+		ChromeOptions ch= new ChromeOptions();
+		ch.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Abhishek\\OneDrive\\Desktop\\JAVA_JARS\\driver\\chromedriver.exe");
+		driver= new ChromeDriver(ch);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get(Constants.URL);
+	}
+}

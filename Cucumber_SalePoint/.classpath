@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cobertura-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cucumber-core-1.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cucumber-java-1.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cucumber-junit-1.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cucumber-jvm-deps-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/cucumber-reporting-0.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/gherkin-2.12.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/Cucumber-Jars_Real/Cucumber-Jars_Real/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Abhishek/OneDrive/Desktop/JAVA_JARS/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

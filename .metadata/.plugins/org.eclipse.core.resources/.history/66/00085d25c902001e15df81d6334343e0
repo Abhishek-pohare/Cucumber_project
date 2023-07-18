@@ -1,0 +1,23 @@
+package constants;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class OpenBrowser {
+	public WebDriver driver;
+	public String URL="http://anuttara.in/business/index.php?application=GL";
+	
+	public void Open() {
+		ChromeOptions ch= new ChromeOptions();
+		ch.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Abhishek\\OneDrive\\Desktop\\JAVA_JARS\\driver\\chromedriver.exe");
+		driver= new ChromeDriver(ch);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+	
+}

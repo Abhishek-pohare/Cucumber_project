@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="example suite 1" verbose="1" >
+  <test name="Regression suite 1" >
+    <classes>
+      <class name="gl_Account.TestSuit_GLA_3_1"/>
+      <class name="gl_Account.TestSuit_GLA_3_11"/>
+      <!--class name="test_suit.TestSuitClass3"/-->
+    </classes>
+ </test>
+</suite>

@@ -1,0 +1,67 @@
+package gl_Account;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataProvider_GLA_3_6 {
+
+	private WebDriver driver;
+	private String URL="http://anuttara.in/business/index.php?application=GL";
+	@DataProvider(name="Credentials")
+	public Object DPMethod() {
+		return new Object[][] {{"nigar","nigar"},{"abhishek","abhishek"}};
+	}
+	
+	@BeforeMethod
+	public void browserinvoke() {
+		ChromeOptions ch = new ChromeOptions();
+		ch.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\Abhishek\\OneDrive\\Desktop\\JAVA_JARS\\driver\\chromedriver.exe");
+		driver= new ChromeDriver(ch);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get(URL);
+	}
+	
+	@Test(dataProvider = "Credentials")
+	public void GLA_3_6_TC_6(String Username, String Password)throws InterruptedException {
+		driver.get(URL);
+		Thread.sleep(2000);
+		
+		//Login to app(Enter id and password)
+		driver.findElement(By.xpath("//input[@name='user_name_entry_field']")).sendKeys(Username);
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(Password);
+		driver.findElement(By.xpath("//input[@name='SubmitUser']")).click();
+		Thread.sleep(2000);
+		
+		//go to banking and GL module
+		driver.findElement(By.xpath("//div[@class='tabs']/a[7]")).click();
+		Thread.sleep(2000);
+		
+		//click on GL account tab
+		driver.findElement(By.xpath("//div[@id='_page_body']/table/tbody/tr[3]/td/table/tbody/tr[2]/td[2]/a[1]")).click();
+		Thread.sleep(1500);
+		
+		//to complete the test process enter account code and account name 
+		driver.findElement(By.name("account_code")).sendKeys("004");
+		driver.findElement(By.name("account_name")).sendKeys("GLA3.6_TC_6");
+		Thread.sleep(1500);
+		
+		//click on add account button 
+		driver.findElement(By.xpath("//button[@id='add']")).click();
+	}
+	
+	@AfterMethod
+	public void Close() {
+		driver.close();
+	}
+}

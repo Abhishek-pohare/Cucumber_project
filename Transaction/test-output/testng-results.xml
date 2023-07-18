@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-19T11:15:45Z" name="Default suite" finished-at="2023-06-19T11:16:42Z" duration-ms="56972">
+    <groups>
+    </groups>
+    <test started-at="2023-06-19T11:15:45Z" name="Default test" finished-at="2023-06-19T11:16:42Z" duration-ms="56972">
+      <class name="payments.Process_Payment">
+        <test-method is-config="true" signature="Start()[pri:0, instance:payments.Process_Payment@7fcf2fc1]" started-at="2023-06-19T11:15:45Z" name="Start" finished-at="2023-06-19T11:16:03Z" duration-ms="17385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Start -->
+        <test-method signature="PM_TC_1()[pri:0, instance:payments.Process_Payment@7fcf2fc1]" started-at="2023-06-19T11:16:03Z" name="PM_TC_1" finished-at="2023-06-19T11:16:42Z" duration-ms="39410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PM_TC_1 -->
+        <test-method is-config="true" signature="close()[pri:0, instance:payments.Process_Payment@7fcf2fc1]" started-at="2023-06-19T11:16:42Z" name="close" finished-at="2023-06-19T11:16:42Z" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- payments.Process_Payment -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

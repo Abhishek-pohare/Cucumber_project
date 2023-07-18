@@ -1,0 +1,64 @@
+package stepDef;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Input_Implementation {
+
+	public static WebDriver driver;
+	public String URL="http://anuttara.in/business/index.php?application=GL";
+	
+@Given("^User opens browser$")
+public void user_opens_browser() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	ChromeOptions ch= new ChromeOptions();
+	ch.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+	System.setProperty("webdriver.chrome.driver", 
+			"C:\\Users\\Abhishek\\OneDrive\\Desktop\\JAVA_JARS\\driver\\chromedriver.exe");
+	driver= new ChromeDriver(ch);
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	driver.get(URL);
+    throw new PendingException();
+}
+
+@When("^User navigate to Login page$")
+public void user_navigate_to_Login_page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@When("^User Enters Username and Password$")
+public void user_Enters_Username_and_Password() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@Then("^Message displayed Login successfully$")
+public void message_displayed_Login_successfully() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@When("^User Logout from application$")
+public void user_Logout_from_application() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+@Then("^Message displayed Logout successfully$")
+public void message_displayed_Logout_successfully() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
+
+
+}
